@@ -1,0 +1,25 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas</title>
+    
+<body>
+    <header>
+        <h1>Películas</h1>
+    </header>
+    <main>
+        <h2>Listado de Películas</h2>
+        <ul class="movie-list">
+            {% for movie in movies %}
+                <li>
+                    <a href="{% url 'movie_detail' movie.id %}">
+                        {{ movie.title }} - {{ movie.release_year }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
